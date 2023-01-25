@@ -4,7 +4,7 @@ import { ref, child, get } from "firebase/database"
 import { useEffect, useState } from "react"
 import DataTable from "react-data-table-component";
 import { onAuthStateChanged } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import jwtDecode from "jwt-decode";
 
 export default function History() {
@@ -89,6 +89,9 @@ export default function History() {
                         }
                     </div>
                 </div>
+                <Link to="/Games">
+                    <button type="button" className="button-ingame btn btn-outline-costum fw-bold">Back To Games</button>
+                </Link>
             </div>
 
         </>
