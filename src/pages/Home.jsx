@@ -1,6 +1,5 @@
 import React, { useEffect } from "react"
 import { Headline, Testimoni, Box} from "../components"
-import ClipLoader from "react-spinners/ClipLoader";
 // import LazyLoad from "react-lazy-load";
 
 export default function Home({ userCredential }) {

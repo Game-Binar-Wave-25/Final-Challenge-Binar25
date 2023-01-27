@@ -1,5 +1,5 @@
 import React from "react"
-import { Leaderboard, Footer } from "../components"
+import { Leaderboard } from "../components"
 
 export default function leaderboard() {
     return(
