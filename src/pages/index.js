@@ -1,0 +1,7 @@
+export {default as Home} from "./Home"
+export {default as Leaderboard} from "./Leaderboard"
+export {default as Profile} from "./Profile"
+export {default as Games} from "./Games"
+export {default as GameDetails} from "./GameDetails"
+export {default as Table} from "./Table"
+export {default as ErrorPage} from "./Error404"

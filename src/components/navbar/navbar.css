@@ -1,0 +1,30 @@
+.fontNav{
+    font-family: Verdana, Geneva, sans-serif!important;
+    font-weight: 800;
+  }
+
+.fontNav2{
+  font-family: Verdana, Geneva, sans-serif;
+  font-weight: 400
+}
+
+.nav-link {
+  border-radius:10px;
+  color: #000;
+}
+
+.nav-link:hover {
+  background-color: #933093;
+  color: white!important;
+  border-radius:10px;
+  animation: 0s
+}
+
+.btn:hover{
+  background-color: #933093;
+}
+
+.active {
+  background-color: #933093;
+  color: #fff !important;
+}

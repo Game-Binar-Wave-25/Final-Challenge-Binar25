@@ -1,0 +1,13 @@
+.button-hover:hover {
+    color: white !important;
+}
+
+.button-hover {
+    border-radius: 5px;
+    width: 30%
+}
+
+.btn-outline-custom {
+    color: #933093;
+    border-color: #933093;
+}

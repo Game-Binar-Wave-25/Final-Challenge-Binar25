@@ -1,0 +1,72 @@
+.modal-content {
+    background: #763670;
+}
+
+.modal-button {
+    border-radius: 30px;
+    width: 90%;
+}
+
+.modal-logo {
+    width: 100px;
+}
+
+.modal-edit {
+    border-radius: 30px;
+    width: 90%;
+}
+
+.text-link {
+    text-decoration: none;
+    color: #f99d1c;
+}
+
+.text-title {
+    font-weight: 900;
+}
+
+.input-ceklis {
+    margin-left: 3.5em;
+}
+
+.modal-edit:hover {
+    color: white !important;
+}
+
+.modal-button:hover {
+    color: white !important;
+}
+
+.forget-password:hover {
+    color: white !important;
+}
+
+.text-link:hover {
+    color: white !important;
+}
+
+.image-failed {
+    width: 150px;
+    border-radius: 30px;
+}
+
+.forget-password {
+    text-decoration: none;
+    color: #f99d1c;
+}
+
+.form-padding {
+    border-radius: 8px;
+}
+
+.login-button {
+    border: none;
+}
+
+.logo-border {
+    border-radius: 30px;
+}
+
+.logo-border:hover {
+    background-color: none;
+}
