@@ -1,18 +1,20 @@
 import React, { useEffect } from "react"
-import { Box, Headline, Testimoni, } from "../components"
+import { Headline, Testimoni, Box} from "../components"
+import ClipLoader from "react-spinners/ClipLoader";
+// import LazyLoad from "react-lazy-load";
 
-export default function Home({userCredential}) {
-
-    useEffect(()=>{
+export default function Home({ userCredential }) {
+    useEffect(() => {
         if (userCredential) {
             const jwtToken = userCredential.user.accessToken
-            localStorage.setItem("accesstoken",jwtToken )
+            localStorage.setItem("accesstoken", jwtToken)
+
         }
-    },[])
-    return(
+    }, [])
+    return (
         <>
             <div className="mb-3 mt-3">
-                <Headline/>
+                <Headline />
             </div>
             <div className="">
                 <Box name={"Recommended games"} cols={4} rows={1} gap={10} />
@@ -21,7 +23,7 @@ export default function Home({userCredential}) {
                 <Box name={"Upcoming games"} cols={4} rows={1} gap={10} />
             </div>
             <div className="container">
-                <Testimoni/>
+                <Testimoni />
             </div>
         </>
     )
