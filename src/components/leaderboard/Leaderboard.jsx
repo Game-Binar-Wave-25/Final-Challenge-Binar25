@@ -1,44 +1,47 @@
 import React, { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom";
 import { database } from "../../services/firebase"
-import { ref,get,child } from "firebase/database"
+import { ref, get, child } from "firebase/database"
+import "./leaderboard.css"
+
+
 const Leaderboard = () => {
 
     const [isData, setData] = useState([])
+
     const navigate = useNavigate()
 
     const authenticate = async () => {
         let storage = localStorage.getItem("accesstoken")
         const db = await get(child(ref(database), "Leaderboard"))
-        if (storage === "" || storage === null){
-          navigate("/")
+        if (storage === "" || storage === null) {
+            navigate("/")
         } else {
-          let item = db?.val()
-          if (item !== null|| item !== undefined) {
-            const leaderboardArray = Object.entries(item).map(([id, data]) => ({
-                id,
-                totalPoint: data.totalPoint
+            let item = db?.val()
+            if (item !== null || item !== undefined) {
+                const leaderboardArray = Object.entries(item).map(([id, data]) => ({
+                    id,
+                    totalPoint: data.totalPoint
                 }));
                 const sorting = leaderboardArray.sort((a, b) => b.totalPoint - a.totalPoint);
                 setData(sorting)
-          }
+            }
         }
     }
 
     useEffect(() => {
         authenticate()
-    },[authenticate])
+    }, [authenticate])
 
     return (
-        <>
-            <div className="container-fluid">
-                <section className="container">
-                    <div className="mt-5 mx-5" style={{ "height": "80vh" }}>
-                        <div className="mt-1 fs-1 fw-bold">Leaderboard</div>
-                        <div className="container mt-3">
-                            <div className="py-2">
-                            {isData.map((el,index) => 
-                                <div key={index} className="container mt-3">
+        <div className="container-fluid z-index-2">
+            <div className="container">
+                <div className="mt-5 mx-5" style={{ "height": "80vh" }}>
+                    <div className="mt-1 fs-1 fw-bold">Leaderboard</div>
+                    <div className="container mt-3">
+                        <div className="py-2 scroll-container">
+                            {isData.map((el, index) =>
+                                <div key={index} className="scroll-area container mt-3 ">
                                     <div className="py-2 mx-5">
                                         <div className="d-flex justify-content-evenly border border-dark border-2 rounded py-3">
                                             <div className="d-flex me-5">
@@ -52,12 +55,11 @@ const Leaderboard = () => {
                                     </div>
                                 </div>
                             )}
-                            </div>
                         </div>
                     </div>
-                </section>
+                </div>
             </div>
-        </>
+        </div>
     )
 }
 
